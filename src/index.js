@@ -10,8 +10,6 @@ ReactDOM.render(
     <div>
       <h1>To Do List</h1>
       <CreateToDo />
-      <ul>
       <ListItems />
-      </ul>
    </div>, document.getElementById('container'));
 registerServiceWorker();
