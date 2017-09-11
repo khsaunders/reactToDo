@@ -1,38 +1,13 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.css';
 
-export default class CreateToDo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('to-do created! ' + this.state.value);
-    event.preventDefault();
-  }
-
+class CreateToDo extends Component {
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-          <input value={this.state.value} onChange={this.handleChange}></input>
-        <button type="submit">add</button>
-      </form>
-    );
+      <div>
+        <button type="submit" onClick={this.props.onClick}>add</button>
+      </div>
+    )
   }
 }
 
-const container = document.getElementById('container');
-
-ReactDOM.render(
-  <CreateToDo/>, container);
+export default CreateToDo;
